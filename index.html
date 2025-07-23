@@ -1,21 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task planner</title>
-    <link rel="stylesheet" href="C:\Users\Telsie Raymond\Desktop\Task_planner\assets\css\bootstrap.css
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WorkWise</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-
 <body>
-    <nav class="navbar">
-    <div class="logo.png>
-        <img src="logo.jpg" alt="logo">
-       C:\Users\Telsie Raymond\Desktop\Task_planner\assets\images\logo.jpg
+  <div class="container">
+    <aside class="sidebar">
+      <div class="brand-section">
+        <img src="assets/images/logo.jpg" alt="WorkWise Logo" class="logo" />
+        <h2>WorkWise</h2>
+      </div>
+
+      <nav>
+        <div class="dropdown">
+          <button onclick="toggleMenu('taskMenu')">Manage Task</button>
+          <div id="taskMenu" class="dropdown-content">
+            <a href="#">Register Task</a>
+            <a href="#">List of Tasks</a>
+            <a href="#">Task History</a>
+          </div>
         </div>
-        <ul class="nav-links">
-            <li><a href=""> </a></li>
-        </ul>
+
+        <div class="dropdown">
+          <button onclick="toggleMenu('reportMenu')">Report</button>
+          <div id="reportMenu" class="dropdown-content">
+            <a href="#">Generate Report</a>
+            <a href="#">Validated Task</a>
+            <a href="#">Invalidated Task</a>
+            <a href="#">Edit Task</a>
+          </div>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <h1>Add Task</h1>
+      <form>
+        <label for="title">Title</label>
+        <input type="text" id="title" placeholder="Title" required />
+
+        <label for="description">Description</label>
+        <textarea id="description" placeholder="Description" rows="4" required></textarea>
+
+        <label for="start-date">Start Date</label>
+        <input type="date" id="start-date" required />
+
+        <label for="end-date">End Date</label>
+        <input type="date" id="end-date" required />
+
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+  </div>
+
+  <script>
+    function toggleMenu(id) {
+      const menu = document.getElementById(id);
+      menu.classList.toggle("show");
+    }
+  </script>
 </body>
-<script src = "C:\Users\Telsie Raymond\Desktop\Task_planner\assets\js\bootstrap.js</script>
 </html>
