@@ -5,62 +5,132 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WorkWise</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
 </head>
 <body>
-  <div class="container">
-    <aside class="sidebar">
-      <div class="brand-section">
-        <img src="assets/images/logo.jpg" alt="WorkWise Logo" class="logo" />
-        <h2>WorkWise</h2>
-      </div>
+  
+  <header class="navbar">
+    <div class="branding">
+      <img src="assets/images/logo.jpg" alt="Logo" class="logo" />
+      <h1 class="site-name">WorkWise</h1>
 
-      <nav>
-        <div class="dropdown">
-          <button onclick="toggleMenu('taskMenu')">Manage Task</button>
-          <div id="taskMenu" class="dropdown-content">
-            <a href="#">Register Task</a>
-            <a href="#">List of Tasks</a>
-            <a href="#">Task History</a>
-          </div>
-        </div>
+</div>
+      <div class="page-body">
+  <aside class="sidebar">
+    <div>
 
-        <div class="dropdown">
-          <button onclick="toggleMenu('reportMenu')">Report</button>
-          <div id="reportMenu" class="dropdown-content">
-            <a href="#">Generate Report</a>
-            <a href="#">Validated Task</a>
-            <a href="#">Invalidated Task</a>
-            <a href="#">Edit Task</a>
-          </div>
-        </div>
-      </nav>
-    </aside>
+    
+      <a href="index.html" class="nav-link"> <img src="assets/images/icons8-home-50.png"  alt= ""style="width: 20px;"> Home</a>
+       <a href="report.html" class="nav-link"><img src="assets/images/icons8-report-50.png" alt="" style="width: 20px;">Details</a>
+        <a href="add.html "class="nav link" > <img src="assets/images/icons8-add-24.png" alt="" style="width: 20px;">Add Task</a>
+        <a href="review.html" class="nav-link"><img src="assets/images/icons8-report-50.png" alt=""style="width:20px;"> Report</a>
 
-    <main class="main-content">
-      <h1>Add Task</h1>
-      <form>
-        <label for="title">Title</label>
-        <input type="text" id="title" placeholder="Title" required />
-
-        <label for="description">Description</label>
-        <textarea id="description" placeholder="Description" rows="4" required></textarea>
-
-        <label for="start-date">Start Date</label>
-        <input type="date" id="start-date" required />
-
-        <label for="end-date">End Date</label>
-        <input type="date" id="end-date" required />
-
-        <button type="submit">Submit</button>
-      </form>
-    </main>
+      
+    </div>
+  </aside>
   </div>
+
+
+  </header>
+  <div class="fixed">
+  <div class="search-section">
+  <input type="text" placeholder="Search WorkWise..." class="search-input" />
+  <button type="submit" class="search-button">🔍</button>
+</div>
+
+
+        
+  <main class="main-content">
+    <h2>Welcome to WorkWise</h2>
+    <p>Start by selecting an option from the sidebar Or you can assigned a task to yourself from the list below.</p>
+  
+      <div class="card-grid">
+  <div class="card">
+    <h3>Design Homepage</h3>
+    <p>Create a responsive homepage layout using HTML and CSS.</p>
+    <p><strong>Duration:</strong> 2 days</p>
+    <button onclick="openTaskOptions('task1')">Manage Task</button>
+    <div id="task1" class="task-options">
+      <button onclick="assignTask('task1')">Assign</button>
+      <button onclick="reassignTask('task1')">Reassign</button>
+      <div class="status-toggle">
+        <label><input type="radio" name="task1-status" value="done"> Done</label>
+        <label><input type="radio" name="task1-status" value="not-done"> Not Done</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Build Task Form</h3>
+    <p>Implement form validation and task submission logic in JavaScript.</p>
+    <p><strong>Duration:</strong> 1 day</p>
+    <button onclick="openTaskOptions('task2')">Manage Task</button>
+    <div id="task2" class="task-options">
+      <button onclick="assignTask('task2')">Assign</button>
+      <button onclick="reassignTask('task2')">Reassign</button>
+      <div class="status-toggle">
+        <label><input type="radio" name="task2-status" value="done"> Done</label>
+        <label><input type="radio" name="task2-status" value="not-done"> Not Done</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Task Review System</h3>
+    <p>Develop a review panel for validating completed tasks.</p>
+    <p><strong>Duration:</strong> 3 days</p>
+    <button onclick="openTaskOptions('task3')">Manage Task</button>
+    <div id="task3" class="task-options">
+      <button onclick="assignTask('task3')">Assign</button>
+      <button onclick="reassignTask('task3')">Reassign</button>
+      <div class="status-toggle">
+        <label><input type="radio" name="task3-status" value="done"> Done</label>
+        <label><input type="radio" name="task3-status" value="not-done"> Not Done</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Generate Reports</h3>
+    <p>Enable report generation for task statuses and durations.</p>
+    <p><strong>Duration:</strong> 2 days</p>
+    <button onclick="openTaskOptions('task4')">Manage Task</button>
+    <div id="task4" class="task-options">
+      <button onclick="assignTask('task4')">Assign</button>
+      <button onclick="reassignTask('task4')">Reassign</button>
+      <div class="status-toggle">
+        <label><input type="radio" name="task4-status" value="done"> Done</label>
+        <label><input type="radio" name="task4-status" value="not-done"> Not Done</label>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+  
+  </main>
+  
 
   <script>
     function toggleMenu(id) {
       const menu = document.getElementById(id);
       menu.classList.toggle("show");
     }
+    
+  function openTaskOptions(taskId) {
+    document.getElementById(taskId).classList.toggle("show");
+  }
+
+  function assignTask(taskId) {
+    alert("Task assigned: " + taskId);
+  }
+
+  function reassignTask(taskId) {
+    alert("Task reassigned: " + taskId);
+  }
+
+
   </script>
 </body>
 </html>
