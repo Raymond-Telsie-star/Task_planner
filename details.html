@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Details</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+    .sidebar {
+      height:  calc( 100vh - 20px);
+      width: 220px;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      width: 240px;
+      min-width: 160px;
+      padding: 20px;
+      border-right: 1px solid #0e0d0d;
+      display: flex;
+      margin-top: 10px;
+      margin-bottom: auto ;
+      background-color: #f7f6f6;
+      flex-direction: column;
+      gaps: 40px;
+      
+      
+    } 
+ .list-group-item {
+     border: none;
+     font-size: 16px;
+     color: var(--text-color);
+}
+.list-group-item:hover {
+  background-color: var(--hover-color);
+  font-weight: bold;
+}
+
+    .main-content {
+      margin-left: 220px;
+      padding: 40px;
+    
+    .navbar {
+      margin-left: 220px;
+    }
+    .footer {
+      margin-left: 220px;
+      padding: 0.75rem;
+      background-color: #8dc4fa;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <div class="sidebar">
+    <h5 class="text-center">Task Manager</h5>
+    <ul class="nav flex-column mt-4 px-3">
+        <nav class="list.group">
+      <a href ="index.html" class=" list-group-item-action">🏠 Home</a>
+      <a href="details.html" class="list-group-item list-group-item-action">📋 Details</a>
+      <a href="add.html" class= "list-group-item list-group-item-action">➕ Add Task</a>
+       <a href="report.html" class="list-group-item list-group-item-action">📊 Report</a>
+  </nav>
+    </ul>
+  </div>
+
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+    
+    <p class="navbar-brand mb-0 h5">Task Details</p>
+    
+  </nav>
+
+  
+  <div class="main-content">
+    <form>
+      <h4 class="mb-3">Task Details</h4>
+
+      <div class="mb-3">
+        <label for="taskTitle" class="form-label">Task Title</label>
+        <input type="text" class="form-control" id="taskTitle" placeholder="Design sidebar layout">
+      </div>
+
+      <div class="mb-3">
+        <label for="taskDesc" class="form-label">Description</label>
+        <textarea class="form-control" id="taskDesc" rows="3" placeholder="Refine layout for modular sidebar and dropdown menu"></textarea>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="assignedTo" class="form-label">Assigned To</label>
+          <input type="text" class="form-control" id="assignedTo" placeholder="Raymond Telsie">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="status" class="form-label">Status</label>
+          <select class="form-select" id="status">
+            <option value="notStarted">Not Started</option>
+            <option value="inProgress">In Progress</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="dueDate" class="form-label">Due Date</label>
+        <input type="date" class="form-control" id="dueDate">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Edit Task</button>
+    </form>
+  </div>
+
+  
+  <footer class="footer">
+    <small>&copy; 2025 Work. All rights reserved.</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
