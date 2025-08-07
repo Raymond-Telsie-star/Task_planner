@@ -3,124 +3,179 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Task Details</title>
+  <title>Workwise</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
       display: flex;
+      flex-direction: column;
       min-height: 100vh;
-      flex-direction: column;
     }
-    .sidebar {
-      height:  calc( 100vh - 20px);
-      width: 220px;
-      position: fixed;
-      top: 70px;
-      left: 0;
-      width: 240px;
-      min-width: 160px;
-      padding: 20px;
-      border-right: 1px solid #0e0d0d;
+    .custom-navbar {
+      background-color: var(--navbar-bg);
+    }
+
+    .site-name {
+      font-size: 28px;
+      font-family: 'Dancing Script', cursive;
+      color: white;
+    }
+
+    .logo {
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    .page-body {
       display: flex;
-      margin-top: 10px;
-      margin-bottom: auto ;
+      flex: 1;
+      flex-direction: row;
+    }
+
+    .sidebar {
+      width: 240px;
       background-color: #f7f6f6;
-      flex-direction: column;
-      gaps: 40px;
-      
-      
-    } 
- .list-group-item {
-     border: none;
-     font-size: 16px;
-     color: var(--text-color);
-}
-.list-group-item:hover {
-  background-color: var(--hover-color);
-  font-weight: bold;
-}
+      padding: 20px;
+      border-right: 1px solid #ccc;
+      flex-shrink: 0;
+    }
 
     .main-content {
-      margin-left: 220px;
-      padding: 40px;
-    
-    .navbar {
-      margin-left: 220px;
+      flex: 1;
+      padding: 40px 20px;
     }
-    .footer {
-      margin-left: 220px;
-      padding: 0.75rem;
-      background-color: #8dc4fa;
+
+    .list-group-item-action {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #333;
+      display: block;
+      text-decoration: none;
+    }
+
+    .list-group-item-action:hover {
+      background-color: #e3f2fd;
+      font-weight: bold;
+    }
+
+    .custom-header, .custom-footer {
+      background-color: #9bcaf0;
+      color: #000;
+    }
+
+    .custom-header h4 {
+      margin: 0;
+      padding: 15px 0;
+    }
+
+    .custom-footer {
       text-align: center;
+      padding: 20px 0;
+    }
+
+    .custom-footer a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .custom-footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .page-body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+      }
     }
   </style>
 </head>
 <body>
 
   
-  <div class="sidebar">
-    <h5 class="text-center">Task Manager</h5>
-    <ul class="nav flex-column mt-4 px-3">
-        <nav class="list.group">
-      <a href ="index.html" class=" list-group-item-action">🏠 Home</a>
-      <a href="details.html" class="list-group-item list-group-item-action">📋 Details</a>
-      <a href="add.html" class= "list-group-item list-group-item-action">➕ Add Task</a>
-       <a href="report.html" class="list-group-item list-group-item-action">📊 Report</a>
-  </nav>
-    </ul>
+  <header class="custom-header text-center">
+     <nav class="navbar custom-navbar px-3">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-3">
+        <img src="assets/images/logo.jpg" alt="Logo" class="logo" />
+        <h1 class="site-name mb-0">WorkWise</h1>
+        </div>
+  </header>
+
+  
+  <div class="page-body">
+    
+    <aside class="sidebar">
+      <nav class="nav flex-column">
+        <a href="index.html" class="list-group-item-action">🏠 Home</a>
+        <a href="details.html" class="list-group-item-action">📋 Details</a>
+        <a href="add.html" class="list-group-item-action">➕ Add Task</a>
+        <a href="report.html" class="list-group-item-action">📊 Report</a>
+      </nav>
+    </aside>
+
+    
+    <main class="main-content">
+      <div class="container">
+        <h3 class="mb-4">Task Details</h3>
+        <form>
+          <div class="mb-3">
+            <label for="taskTitle" class="form-label">Task Title</label>
+            <input type="text" class="form-control" id="taskTitle" placeholder="Design sidebar layout">
+          </div>
+
+          <div class="mb-3">
+            <label for="taskDesc" class="form-label">Description</label>
+            <textarea class="form-control" id="taskDesc" rows="3" placeholder="Refine layout for modular sidebar and dropdown menu"></textarea>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="assignedTo" class="form-label">Assigned To</label>
+              <input type="text" class="form-control" id="assignedTo" placeholder="Raymond Telsie">
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label for="status" class="form-label">Status</label>
+              <select class="form-select" id="status">
+                <option value="notStarted">Not Started</option>
+                <option value="inProgress">In Progress</option>
+                <option value="completed">Completed</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="dueDate" class="form-label">Due Date</label>
+            <input type="date" class="form-control" id="dueDate">
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            <i class="bi bi-pencil-square me-2"></i>Edit Task
+          </button>
+        </form>
+      </div>
+    </main>
   </div>
 
   
-  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
-    
-    <p class="navbar-brand mb-0 h5">Task Details</p>
-    
-  </nav>
-
-  
-  <div class="main-content">
-    <form>
-      <h4 class="mb-3">Task Details</h4>
-
-      <div class="mb-3">
-        <label for="taskTitle" class="form-label">Task Title</label>
-        <input type="text" class="form-control" id="taskTitle" placeholder="Design sidebar layout">
-      </div>
-
-      <div class="mb-3">
-        <label for="taskDesc" class="form-label">Description</label>
-        <textarea class="form-control" id="taskDesc" rows="3" placeholder="Refine layout for modular sidebar and dropdown menu"></textarea>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6 mb-3">
-          <label for="assignedTo" class="form-label">Assigned To</label>
-          <input type="text" class="form-control" id="assignedTo" placeholder="Raymond Telsie">
-        </div>
-        <div class="col-md-6 mb-3">
-          <label for="status" class="form-label">Status</label>
-          <select class="form-select" id="status">
-            <option value="notStarted">Not Started</option>
-            <option value="inProgress">In Progress</option>
-            <option value="completed">Completed</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="mb-3">
-        <label for="dueDate" class="form-label">Due Date</label>
-        <input type="date" class="form-control" id="dueDate">
-      </div>
-
-      <button type="submit" class="btn btn-primary">Edit Task</button>
-    </form>
-  </div>
-
-  
-  <footer class="footer">
-    <small>&copy; 2025 Work. All rights reserved.</small>
+  <footer class="custom-footer">
+    <div class="container">
+      <p>&copy; 2025 WorkWise. All rights reserved.</p>
+      <p>
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Service</a>
+      </p>
+    </div>
   </footer>
 
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 </body>
 </html>

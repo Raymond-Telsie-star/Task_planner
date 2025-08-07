@@ -1,148 +1,75 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
- 
-  filter: brightness(100vh);
-}
 
-.page-body {
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-}
-
-.d-flex {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  height: 60px;
-  padding: 10px 20px;
-    background-color: #9bcaf0;
-  border-bottom: 1px solid #0a0a0a;
-}
-
-.branding {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  width: 70px;
-  margin-right: 50px;
-}
-
-.site-name {
-  font-size: 40px;
-  font-family: 'Pacifico', cursive;
-  color: white;
-  padding-left: 60vh;
-}
-
-.sidebar {
-  margin-bottom: auto;
-  margin-top: 10px;
-  top: 70px;
-  left: 0;
-  width: 240px; 
-  min-width: 160px;
-  height: calc(100vh - 5px);
-  background-color: #f7f6f6;
-  padding: 20px;
-  border-right: 1px solid #0e0d0d;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
- .list-group-item {border: none;
-  font-size: 16px;
-  color: var(--text-color);
-}
-.list-group-item:hover {
-  background-color: var(--hover-color);
-  font-weight: bold;
-}
-
-
-
-
-
-
-.main-content {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  margin-left: 200px; 
-}
-
-.content-left {
-  flex: 1;
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 8px;
-  width: 100%;
-  max-width: none;
-}
-
-form {
-  flex: 1;
-  width: 60%;
-  height: 60%;
-  max-width: none;
-  background-color: #fdfeff;
-  padding: 10px 100%; 
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  display: flex;
-   flex-direction: column; 
-  
-}
-
-.form label {
-  font-weight: bold;
-  /* margin-bottom: 5px; */
-  color: #333;
-}
-
-/*form input,
-form textarea {
-  margin-bottom: 20px;
-  padding: 30px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-} */
-
-.form-control{
-  width: 83%;
-  height: 15vh;
-  margin: 20px;
-  border-radius: 10px;
-
-}
-
-
-form button {
-  padding: 10px;
-  background-color: #4a60ff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #91a5ff;
-}
-
-footer {
+.bg-custom {
   background-color: #9bcaf0;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  border-top: 1px solid #090909;
 }
-footer a:hover {
-  text-decoration: underline;
-  color: #939efb;
+    .site-name {
+      font-size: 28px;
+      font-family: 'Dancing Script', cursive;
+      color: white;
+    }
+
+    .logo {
+      width: 50px;
+      border-radius: 50%;
+    }
+
+      .sidebar {
+      background-color: #fff;
+      height: 100vh;
+      border-right: 1px solid #ccc;
+      padding-top: 20px;
+    }
+    
+
+    .sidebar .list-group-item {
+      border: none;
+      color: var(--text-color);
+    }
+
+    .sidebar .list-group-item:hover {
+      background-color: var(--hover-color);
+      font-weight: bold;
+    }
+
+
+   .footer {
+      background-color: var(--navbar-bg);
+      padding: 20px 0;
+    }
+
+    .footer a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-header h2 {
+  font-size: 24px;
+}
+
+form .form-label {
+  font-weight: 600;
+}
+
+form .form-control {
+  border-radius: 8px;
+  min-height: 45px;
+}
+
+form textarea.form-control {
+  min-height: 120px;
+}
+
+form button[type="submit"] {
+  padding: 12px;
+  font-weight: bold;
+  font-size: 16px;
 }

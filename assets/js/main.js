@@ -1,5 +1,4 @@
-function toggleMenu(id) {
-  const menu = document.getElementById(id);
-  console.log("Clicked:", id); 
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
+// Example: Add future interactivity here
+console.log("WorkWise script loaded");
+
+// Future: Add assign/reassign logic, status toggles, etc.
