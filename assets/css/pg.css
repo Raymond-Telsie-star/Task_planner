@@ -1,0 +1,108 @@
+body{
+    
+  margin: 0;
+  /*font-family: Arial, sans-serif;*/
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  filter: brightness(100vh);font-family: 'Segoe UI', Arial, sans-serif;
+ background-color: #f5f8fd;
+ }
+
+table {
+      width: 80%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      
+      
+    }
+
+td {
+      
+      padding: 10px;
+      text-align: center;
+      border-style: inset;
+  }
+input[type="number"] {
+      width: 60px;
+    }
+  
+.container {
+  display: flex;
+  justify-content:left;                                                                                                                                                                                                                                                          
+  align-items: center;     
+          
+  background-color: #f9f9f9;
+}
+
+ .save-button {
+      background-color: blue;
+      color: white;
+      padding: 20px;
+      font-size: 17px;
+      border: none;
+      border-radius: 7px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+.save-button:hover {
+      background-color: #0047ab; /* Optional: darker blue on hover */
+    }
+    
+
+select, input {
+      font-size: 14px;}
+.logo {
+  width: 70px;
+  margin-right: 50px;
+  border-bottom: 1px solid blue;
+}
+
+
+.sidebar {
+  position: fixed;
+  margin-bottom: auto;
+  margin-top: 10px;
+  top: 70px;
+  left: 0;
+  width: 10%;
+  min-width: 160px;
+  height: calc(100vh - 70px);
+  background-color: #f7f6f6;
+  padding: 20px;
+  border-right: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.site-name {
+  font-size: 36px;
+  color: var(--text-color);
+  font-family: 'Dancing script', cursive;
+  color: white;
+  padding-left: 60vh;
+}
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  height: 60px;
+  padding: 10px 20px;
+    background-color: #9bcaf0;
+  border-bottom: 1px solid blue;
+}
+
+footer {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  border-top: 1px solid blue;
+  position: fixed;
+  bottom: 0;
+  background-color: #9bcaf0;
+}
+footer a:hover {
+  text-decoration: underline;
+  color: #abb3f8;
+}
